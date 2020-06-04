@@ -38,7 +38,7 @@ function makeHash(array){
     else{
       type = "brack"
     }
-    
+
     hash[index] = {obj: array[index], left:null, right:null, direction: direct, type: type}
   }
   return hash
@@ -50,7 +50,7 @@ function buildTree(hash, index){
   keys = keys.slice(index, keys.length)
   keys.shift()
 
-  
+
   let closeNode = keys.find(ind => hash[ind].direction === "close" && hash[ind].type === hash[index].type )
   let openNode = keys.find(ind => hash[ind].direction === "open")
   currentNode.left = closeNode
